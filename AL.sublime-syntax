@@ -111,6 +111,7 @@ contexts:
     - include: object-body-contents
 
   object-body-contents:
+    - include: procedure-declarations
     - include: section-keywords
     - include: nested-braces
     - include: literals
@@ -131,6 +132,97 @@ contexts:
       scope: punctuation.section.block.end.al
       pop: true
     - include: object-body-contents
+
+  # ===========================================================================
+  # Procedures and Triggers
+  # ===========================================================================
+
+  procedure-declarations:
+    - match: \b(?i:local|internal|protected)\b
+      scope: storage.modifier.al
+    - match: \b(?i:procedure)\b
+      scope: keyword.declaration.al
+      push: procedure-name
+    - match: \b(?i:trigger)\b
+      scope: keyword.declaration.al
+      push: procedure-name
+    - match: \b(?i:event)\b
+      scope: keyword.declaration.al
+      push: procedure-name
+
+  procedure-name:
+    - match: '"[^"]*"'
+      scope: entity.name.function.al
+      set: procedure-params-expect
+    - match: '{{ident}}'
+      scope: entity.name.function.al
+      set: procedure-params-expect
+    - match: (?=\S)
+      pop: true
+
+  procedure-params-expect:
+    - match: \(
+      scope: punctuation.section.parameters.begin.al
+      set: parameter-list
+    - match: (?=\S)
+      pop: true
+
+  parameter-list:
+    - match: \)
+      scope: punctuation.section.parameters.end.al
+      set: procedure-return
+    - match: \b(?i:var)\b
+      scope: storage.modifier.al
+    - match: ':'
+      scope: punctuation.separator.type.al
+      push: type-annotation
+    - match: '"[^"]*"'
+      scope: variable.parameter.al
+    - match: '{{ident}}'
+      scope: variable.parameter.al
+    - match: ;
+      scope: punctuation.separator.al
+    - include: literals
+
+  procedure-return:
+    - match: ':'
+      scope: punctuation.separator.type.al
+      push: type-annotation
+    - match: ;
+      scope: punctuation.terminator.al
+      pop: true
+    - match: '{{ident}}'
+      scope: variable.other.al
+    - match: (?=\b(?i:var|begin)\b)
+      pop: true
+    - match: (?=\{|\})
+      pop: true
+
+  type-annotation:
+    - match: \b(?i:Integer|BigInteger|Decimal|Text|Code|Boolean|Char|Byte|Date|Time|DateTime|DateFormula|Duration|Guid|Blob|Record|RecordId|RecordRef|FieldRef|KeyRef|Option|Dialog|File|InStream|OutStream|TextBuilder|JsonObject|JsonArray|JsonToken|JsonValue|HttpClient|HttpContent|HttpHeaders|HttpRequestMessage|HttpResponseMessage|XmlDocument|XmlElement|XmlNode|XmlNodeList|XmlAttribute|XmlComment|XmlText|XmlCData|XmlDeclaration|XmlNamespaceManager|XmlWriteOptions|XmlReadOptions|List|Dictionary|Notification|ErrorInfo|Media|MediaSet|Variant|Action|FilterPageBuilder|SessionSettings|WebServiceActionContext|Label|TextConst|SecretText|Version|ModuleInfo|DotNet)\b
+      scope: support.type.al
+    - match: \b(?i:Codeunit|Record|Page|Report|Query|XmlPort|Enum|Interface)\b
+      scope: support.type.al
+    - match: \b(?i:array)\b
+      scope: support.type.al
+    - match: \b(?i:temporary)\b
+      scope: storage.modifier.al
+    - match: '"[^"]*"'
+      scope: entity.name.type.al
+    - match: '{{ident}}'
+      scope: storage.type.al
+    - match: \[
+      scope: punctuation.section.brackets.begin.al
+      push: type-brackets
+    - match: (?=[;,)])
+      pop: true
+
+  type-brackets:
+    - match: \]
+      scope: punctuation.section.brackets.end.al
+      pop: true
+    - include: numeric-literals
+    - include: strings
 
   # ===========================================================================
   # String and Identifier Literals
