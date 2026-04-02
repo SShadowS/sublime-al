@@ -67,16 +67,20 @@ table 50000 "My Table"
 
 // Preprocessor
 #if not CLEAN25
-// <- keyword.control.import.al
-//  ^^^ keyword.operator.al
-//      ^^^^^^^ variable.other.al
+// <- punctuation.definition.directive.al
+// ^^ keyword.control.import.al
+//    ^^^ keyword.operator.al
+//        ^^^^^^^ variable.other.al
 #else
-// <- keyword.control.import.al
+// <- punctuation.definition.directive.al
+// ^^^ keyword.control.import.al
 #endif
-// <- keyword.control.import.al
+// <- punctuation.definition.directive.al
+// ^^^^ keyword.control.import.al
 
 #pragma warning disable AL0432
-// <- keyword.control.import.al
+// <- punctuation.definition.directive.al
+// ^^^^^ keyword.control.import.al
 
 /* block comment */
 // ^^^^^^^^^^^^^ comment.block.al
