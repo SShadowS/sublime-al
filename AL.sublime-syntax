@@ -111,7 +111,9 @@ contexts:
     - include: object-body-contents
 
   object-body-contents:
+    - include: attributes
     - include: procedure-declarations
+    - include: var-sections
     - include: section-keywords
     - include: nested-braces
     - include: literals
@@ -223,6 +225,62 @@ contexts:
       pop: true
     - include: numeric-literals
     - include: strings
+
+  # ===========================================================================
+  # Var Sections
+  # ===========================================================================
+
+  var-sections:
+    - match: \b(?i:var)\b
+      scope: keyword.declaration.al
+      push: var-section
+
+  var-section:
+    - match: (?=\b(?i:begin|procedure|trigger|event)\b)
+      pop: true
+    - match: (?=\})
+      pop: true
+    - match: ':'
+      scope: punctuation.separator.type.al
+      push: type-annotation
+    - match: '"[^"]*"'
+      scope: variable.other.al
+    - match: '{{ident}}'
+      scope: variable.other.al
+    - match: ;
+      scope: punctuation.separator.al
+    - include: literals
+
+  # ===========================================================================
+  # Attributes
+  # ===========================================================================
+
+  attributes:
+    - match: '\['
+      scope: punctuation.definition.annotation.begin.al
+      push: attribute-body
+
+  attribute-body:
+    - meta_scope: meta.annotation.al
+    - match: '\]'
+      scope: punctuation.definition.annotation.end.al
+      pop: true
+    - match: '{{ident}}'
+      scope: variable.annotation.al
+    - match: \(
+      scope: punctuation.section.arguments.begin.al
+      push: attribute-arguments
+    - include: literals
+
+  attribute-arguments:
+    - match: \)
+      scope: punctuation.section.arguments.end.al
+      pop: true
+    - match: ','
+      scope: punctuation.separator.al
+    - include: literals
+    - match: '{{ident}}'
+      scope: variable.other.al
 
   # ===========================================================================
   # String and Identifier Literals
