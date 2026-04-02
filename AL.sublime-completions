@@ -1,0 +1,917 @@
+{
+    "scope": "source.al",
+    "completions": [
+        {
+            "trigger": "access",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "action",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "actionref",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "actions",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "add",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "addafter",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "addbefore",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "addfirst",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "addlast",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "and",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "area",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "array",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "ascending",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "assembly",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "begin",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "biginteger",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "blob",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "boolean",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "byte",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "char",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "chartpart",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "code",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "column",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "comment",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "const",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "content",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "creation",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "cuegroup",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "customaction",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "customizes",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "database",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "dataitem",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "dataset",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "datatransfer",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "date",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "dateformula",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "datetime",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "decimal",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "descending",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "dialog",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "dictionary",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "duration",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "elements",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "else",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "embedding",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "end",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "entitlement",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "errorinfo",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "event",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "extends",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "factboxes",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "false",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "field",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "fieldattribute",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "fieldelement",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "fieldgroup",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "fieldgroups",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "fieldref",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "fields",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "file",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "fileupload",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "fileuploadaction",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "filter",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "filterpagebuilder",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "fixed",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "grid",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "group",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "guid",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "httpclient",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "httpcontent",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "httpheaders",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "httprequestmessage",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "httpresponsemessage",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "if",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "implements",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "instream",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "integer",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "interface",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "internal",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "jsonarray",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "jsonobject",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "jsontoken",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "jsonvalue",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "key",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "keys",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "label",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "labels",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "layout",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "list",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "local",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "locked",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "lookup",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "maxlength",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "media",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "mediaset",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "modify",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "moduleinfo",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "moveafter",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "movebefore",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "movefirst",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "movelast",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "namespace",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "navigation",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "notification",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "of",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "option",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "or",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "order",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "outstream",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "page",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "part",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "procedure",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "processing",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "profile",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "promoted",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "prompt",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "promptguide",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "prompting",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "promptoptions",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "protected",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "public",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "query",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "record",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "recordid",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "recordref",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "rendering",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "repeater",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "report",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "reporting",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "requestpage",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "rolecenter",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "schema",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "secrettext",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "sections",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "separator",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "session",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "sessionsettings",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "sorting",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "system",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "systemaction",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "systemactions",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "systempart",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "table",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "tableconnectiontype",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "tabledata",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "tableelement",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "tablefilter",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "temporary",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "testpage",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "testrequestpage",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "text",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "textattribute",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "textbuilder",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "textconst",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "textelement",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "time",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "trigger",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "true",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "type",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "upperlimit",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "usercontrol",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "using",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "value",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "var",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "variant",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "verbosity",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "version",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "view",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "views",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "webserviceactioncontext",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "xmlattribute",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "xmldocument",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "xmlelement",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "xmlnode",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "xmlnodelist",
+            "kind": "keyword"
+        },
+        {
+            "trigger": "Action",
+            "kind": "type"
+        },
+        {
+            "trigger": "BigInteger",
+            "kind": "type"
+        },
+        {
+            "trigger": "Blob",
+            "kind": "type"
+        },
+        {
+            "trigger": "Boolean",
+            "kind": "type"
+        },
+        {
+            "trigger": "Byte",
+            "kind": "type"
+        },
+        {
+            "trigger": "Char",
+            "kind": "type"
+        },
+        {
+            "trigger": "Code",
+            "kind": "type"
+        },
+        {
+            "trigger": "Date",
+            "kind": "type"
+        },
+        {
+            "trigger": "DateFormula",
+            "kind": "type"
+        },
+        {
+            "trigger": "DateTime",
+            "kind": "type"
+        },
+        {
+            "trigger": "Decimal",
+            "kind": "type"
+        },
+        {
+            "trigger": "Dialog",
+            "kind": "type"
+        },
+        {
+            "trigger": "Dictionary",
+            "kind": "type"
+        },
+        {
+            "trigger": "DotNet",
+            "kind": "type"
+        },
+        {
+            "trigger": "Duration",
+            "kind": "type"
+        },
+        {
+            "trigger": "ErrorInfo",
+            "kind": "type"
+        },
+        {
+            "trigger": "FieldRef",
+            "kind": "type"
+        },
+        {
+            "trigger": "File",
+            "kind": "type"
+        },
+        {
+            "trigger": "Guid",
+            "kind": "type"
+        },
+        {
+            "trigger": "HttpClient",
+            "kind": "type"
+        },
+        {
+            "trigger": "HttpContent",
+            "kind": "type"
+        },
+        {
+            "trigger": "HttpHeaders",
+            "kind": "type"
+        },
+        {
+            "trigger": "HttpRequestMessage",
+            "kind": "type"
+        },
+        {
+            "trigger": "HttpResponseMessage",
+            "kind": "type"
+        },
+        {
+            "trigger": "InStream",
+            "kind": "type"
+        },
+        {
+            "trigger": "Integer",
+            "kind": "type"
+        },
+        {
+            "trigger": "JsonArray",
+            "kind": "type"
+        },
+        {
+            "trigger": "JsonObject",
+            "kind": "type"
+        },
+        {
+            "trigger": "JsonToken",
+            "kind": "type"
+        },
+        {
+            "trigger": "JsonValue",
+            "kind": "type"
+        },
+        {
+            "trigger": "KeyRef",
+            "kind": "type"
+        },
+        {
+            "trigger": "Label",
+            "kind": "type"
+        },
+        {
+            "trigger": "List",
+            "kind": "type"
+        },
+        {
+            "trigger": "Media",
+            "kind": "type"
+        },
+        {
+            "trigger": "MediaSet",
+            "kind": "type"
+        },
+        {
+            "trigger": "Notification",
+            "kind": "type"
+        },
+        {
+            "trigger": "Option",
+            "kind": "type"
+        },
+        {
+            "trigger": "OutStream",
+            "kind": "type"
+        },
+        {
+            "trigger": "Record",
+            "kind": "type"
+        },
+        {
+            "trigger": "RecordId",
+            "kind": "type"
+        },
+        {
+            "trigger": "RecordRef",
+            "kind": "type"
+        },
+        {
+            "trigger": "SecretText",
+            "kind": "type"
+        },
+        {
+            "trigger": "Text",
+            "kind": "type"
+        },
+        {
+            "trigger": "TextBuilder",
+            "kind": "type"
+        },
+        {
+            "trigger": "TextConst",
+            "kind": "type"
+        },
+        {
+            "trigger": "Time",
+            "kind": "type"
+        },
+        {
+            "trigger": "Variant",
+            "kind": "type"
+        },
+        {
+            "trigger": "Version",
+            "kind": "type"
+        },
+        {
+            "trigger": "XmlAttribute",
+            "kind": "type"
+        },
+        {
+            "trigger": "XmlDocument",
+            "kind": "type"
+        },
+        {
+            "trigger": "XmlElement",
+            "kind": "type"
+        },
+        {
+            "trigger": "XmlNode",
+            "kind": "type"
+        },
+        {
+            "trigger": "XmlNodeList",
+            "kind": "type"
+        }
+    ]
+}
