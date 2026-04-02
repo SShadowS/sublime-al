@@ -16,6 +16,7 @@ contexts:
     - include: preprocessor
 
   main:
+    - include: object-declarations
     - include: literals
     - include: keywords
 
@@ -77,6 +78,59 @@ contexts:
     - meta_content_scope: meta.preprocessor.al
     - match: $\n?
       pop: true
+
+  # ===========================================================================
+  # Object Declarations
+  # ===========================================================================
+
+  object-declarations:
+    - match: \b(?i:codeunit|table|tableextension|page|pageextension|report|reportextension|query|xmlport|enum|enumextension|interface|controladdin|dotnet|profile|profileextension|permissionset|permissionsetextension|entitlement|pagecustomization)\b
+      scope: storage.type.al
+      push: object-header
+
+  object-header:
+    - match: \b\d+\b
+      scope: constant.numeric.integer.al
+    - match: '"[^"]*"'
+      scope: entity.name.type.al
+    - match: \b(?i:extends|implements|customizes)\b
+      scope: keyword.import.al
+    - match: '{{ident}}'
+      scope: entity.name.type.al
+    - match: \{
+      scope: punctuation.section.block.begin.al
+      set: object-body
+    - match: (?=\S)
+      pop: true
+
+  object-body:
+    - meta_scope: meta.block.al
+    - match: \}
+      scope: punctuation.section.block.end.al
+      pop: true
+    - include: object-body-contents
+
+  object-body-contents:
+    - include: section-keywords
+    - include: nested-braces
+    - include: literals
+    - include: keywords
+
+  section-keywords:
+    - match: \b(?i:fields|keys|key|fieldgroups|fieldgroup|actions|layout|area|group|repeater|cuegroup|fixed|grid|part|systempart|usercontrol|dataset|elements|dataitem|column|filter|labels|rendering|requestpage|schema|views|view|field|value|separator|label|modify|add|addfirst|addlast|addafter|addbefore|movefirst|movelast|moveafter|movebefore)\b
+      scope: keyword.other.al
+
+  nested-braces:
+    - match: \{
+      scope: punctuation.section.block.begin.al
+      push: object-body-nested
+
+  object-body-nested:
+    - meta_scope: meta.block.al
+    - match: \}
+      scope: punctuation.section.block.end.al
+      pop: true
+    - include: object-body-contents
 
   # ===========================================================================
   # String and Identifier Literals
