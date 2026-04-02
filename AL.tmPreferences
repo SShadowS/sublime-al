@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plist version="1.0">
+<dict>
+    <key>scope</key>
+    <string>source.al</string>
+    <key>settings</key>
+    <dict>
+        <key>shellVariables</key>
+        <array>
+            <dict>
+                <key>name</key>
+                <string>TM_COMMENT_START</string>
+                <key>value</key>
+                <string>// </string>
+            </dict>
+            <dict>
+                <key>name</key>
+                <string>TM_COMMENT_START_2</string>
+                <key>value</key>
+                <string>/*</string>
+            </dict>
+            <dict>
+                <key>name</key>
+                <string>TM_COMMENT_END_2</string>
+                <key>value</key>
+                <string>*/</string>
+            </dict>
+        </array>
+        <key>increaseIndentPattern</key>
+        <string>(?i)^\s*(begin|repeat|if.*then\s*$|else\s*$|for.*do\s*$|while.*do\s*$|case.*of\s*$)\s*$|.*\{\s*$</string>
+        <key>decreaseIndentPattern</key>
+        <string>(?i)^\s*(end;?|until\b|\})\s*$</string>
+        <key>symbolTransformation</key>
+        <string>s/^\s*(?:local|internal|protected)?\s*(?:procedure|trigger)\s+//; s/\(.*//;</string>
+        <key>symbolIndexPattern</key>
+        <string>^\s*(?:local|internal|protected)?\s*(?:procedure|trigger)\s+(\w+|"[^"]+")</string>
+    </dict>
+</dict>
+</plist>
