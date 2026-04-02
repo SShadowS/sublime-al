@@ -1,0 +1,192 @@
+%YAML 1.2
+---
+name: AL
+scope: source.al
+version: 2
+file_extensions:
+  - al
+  - dal
+
+variables:
+  ident: '[A-Za-z_]\w*'
+
+contexts:
+  prototype:
+    - include: comments
+    - include: preprocessor
+
+  main:
+    - include: literals
+    - include: keywords
+
+  # ===========================================================================
+  # Comments
+  # ===========================================================================
+
+  comments:
+    - match: //
+      scope: punctuation.definition.comment.al
+      push: comment-line
+    - match: /\*
+      scope: punctuation.definition.comment.begin.al
+      push: comment-block
+
+  comment-line:
+    - meta_scope: comment.line.double-slash.al
+    - match: $\n?
+      pop: true
+
+  comment-block:
+    - meta_scope: comment.block.al
+    - match: \*/
+      scope: punctuation.definition.comment.end.al
+      pop: true
+
+  # ===========================================================================
+  # Preprocessor Directives
+  # ===========================================================================
+
+  preprocessor:
+    - match: ^\s*(#)\s*(?i:(if|elif))\b
+      captures:
+        1: punctuation.definition.directive.al
+        2: keyword.control.import.al
+      push: preprocessor-condition
+    - match: ^\s*(#)\s*(?i:(else|endif))\b
+      captures:
+        1: punctuation.definition.directive.al
+        2: keyword.control.import.al
+    - match: ^\s*(#)\s*(?i:(pragma|region|endregion))\b
+      captures:
+        1: punctuation.definition.directive.al
+        2: keyword.control.import.al
+      push: preprocessor-rest
+
+  preprocessor-condition:
+    - meta_content_scope: meta.preprocessor.al
+    - match: \b(?i:not)\b
+      scope: keyword.operator.al
+    - match: \b(?i:and|or)\b
+      scope: keyword.operator.al
+    - match: '{{ident}}'
+      scope: variable.other.al
+    - match: $\n?
+      pop: true
+
+  preprocessor-rest:
+    - meta_content_scope: meta.preprocessor.al
+    - match: $\n?
+      pop: true
+
+  # ===========================================================================
+  # String and Identifier Literals
+  # ===========================================================================
+
+  literals:
+    - include: strings
+    - include: quoted-identifiers
+    - include: numeric-literals
+
+  strings:
+    - match: "@'"
+      scope: punctuation.definition.string.begin.al
+      push: string-verbatim
+    - match: "'"
+      scope: punctuation.definition.string.begin.al
+      push: string-single
+
+  string-single:
+    - meta_scope: string.quoted.single.al
+    - meta_include_prototype: false
+    - match: "''"
+      scope: constant.character.escape.al
+    - match: "'"
+      scope: punctuation.definition.string.end.al
+      pop: true
+
+  string-verbatim:
+    - meta_scope: string.quoted.other.al
+    - meta_include_prototype: false
+    - match: "''"
+      scope: constant.character.escape.al
+    - match: "'"
+      scope: punctuation.definition.string.end.al
+      pop: true
+
+  quoted-identifiers:
+    - match: '"'
+      scope: punctuation.definition.variable.begin.al
+      push: quoted-identifier
+
+  quoted-identifier:
+    - meta_scope: variable.other.quoted.al
+    - meta_include_prototype: false
+    - match: '"'
+      scope: punctuation.definition.variable.end.al
+      pop: true
+
+  # ===========================================================================
+  # Numeric Literals
+  # ===========================================================================
+
+  numeric-literals:
+    - match: \b\d+(?i:DT)\b
+      scope: constant.numeric.datetime.al
+    - match: \b\d+(?i:D)\b
+      scope: constant.numeric.date.al
+    - match: \b\d+(?i:T)\b
+      scope: constant.numeric.time.al
+    - match: \b\d+(?i:L)\b
+      scope: constant.numeric.biginteger.al
+    - match: \b\d+\.\d+\b
+      scope: constant.numeric.decimal.al
+    - match: \b\d+\b
+      scope: constant.numeric.integer.al
+
+  # ===========================================================================
+  # Keywords (flat matching for statement-level code)
+  # ===========================================================================
+
+  keywords:
+    - include: operators
+    - include: keyword-constants
+    - include: keyword-control
+    - include: keyword-operators
+    - include: keyword-builtin-types
+    - include: keyword-property
+
+  keyword-constants:
+    - match: \b(?i:true|false)\b
+      scope: constant.language.al
+
+  keyword-control:
+    - match: \b(?i:if|then|else|case|of|while|do|for|foreach|in|repeat|until|exit|break|continue|with|asserterror|to|downto|begin|end)\b
+      scope: keyword.control.al
+
+  keyword-operators:
+    - match: \b(?i:and|or|not|xor|div|mod|is|as)\b
+      scope: keyword.operator.al
+
+  keyword-builtin-types:
+    - match: \b(?i:Integer|BigInteger|Decimal|Text|Code|Boolean|Char|Byte|Date|Time|DateTime|DateFormula|Duration|Guid|Blob|Record|RecordId|RecordRef|FieldRef|KeyRef|Option|Dialog|File|InStream|OutStream|TextBuilder|JsonObject|JsonArray|JsonToken|JsonValue|HttpClient|HttpContent|HttpHeaders|HttpRequestMessage|HttpResponseMessage|XmlDocument|XmlElement|XmlNode|XmlNodeList|XmlAttribute|XmlComment|XmlText|XmlCData|XmlDeclaration|XmlNamespaceManager|XmlWriteOptions|XmlReadOptions|List|Dictionary|Notification|ErrorInfo|Media|MediaSet|Variant|Action|FilterPageBuilder|SessionSettings|WebServiceActionContext|Label|TextConst|SecretText|Version|ModuleInfo|DotNet)\b
+      scope: support.type.al
+
+  keyword-property:
+    - match: \b(?i:average|const|count|exist|field|filter|lookup|max|min|order|sorting|sum|tabledata|upperlimit|where|ascending|descending)\b
+      scope: keyword.other.property.al
+
+  operators:
+    - match: ':=|\+=|-=|/=|\*='
+      scope: keyword.operator.assignment.al
+    - match: '<>|<=|>=|<|>|='
+      scope: keyword.operator.comparison.al
+    - match: '\.\.'
+      scope: keyword.operator.range.al
+    - match: '::'
+      scope: punctuation.accessor.al
+    - match: '[+\-*/]'
+      scope: keyword.operator.arithmetic.al
+    - match: '[;,]'
+      scope: punctuation.separator.al
+    - match: '\.'
+      scope: punctuation.accessor.dot.al
