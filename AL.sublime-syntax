@@ -16,6 +16,7 @@ contexts:
     - include: preprocessor
 
   main:
+    - include: namespace-using
     - include: object-declarations
     - include: literals
     - include: keywords
@@ -78,6 +79,14 @@ contexts:
     - meta_content_scope: meta.preprocessor.al
     - match: $\n?
       pop: true
+
+  # ===========================================================================
+  # Namespace and Using
+  # ===========================================================================
+
+  namespace-using:
+    - match: \b(?i:namespace|using)\b
+      scope: keyword.import.al
 
   # ===========================================================================
   # Object Declarations
