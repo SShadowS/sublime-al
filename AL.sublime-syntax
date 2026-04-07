@@ -202,14 +202,16 @@ contexts:
     - match: ;
       scope: punctuation.terminator.al
       pop: true
-    - match: '{{ident}}'
-      scope: variable.other.al
     - match: (?=\b(?i:var|begin)\b)
       pop: true
     - match: (?=\{|\})
       pop: true
+    - match: '{{ident}}'
+      scope: variable.other.al
 
   type-annotation:
+    - match: (?=\b(?i:var|begin|procedure|trigger|event|local|internal|protected)\b)
+      pop: true
     - match: \b(?i:Integer|BigInteger|Decimal|Text|Code|Boolean|Char|Byte|Date|Time|DateTime|DateFormula|Duration|Guid|Blob|Record|RecordId|RecordRef|FieldRef|KeyRef|Option|Dialog|File|InStream|OutStream|TextBuilder|JsonObject|JsonArray|JsonToken|JsonValue|HttpClient|HttpContent|HttpHeaders|HttpRequestMessage|HttpResponseMessage|XmlDocument|XmlElement|XmlNode|XmlNodeList|XmlAttribute|XmlComment|XmlText|XmlCData|XmlDeclaration|XmlNamespaceManager|XmlWriteOptions|XmlReadOptions|List|Dictionary|Notification|ErrorInfo|Media|MediaSet|Variant|Action|FilterPageBuilder|SessionSettings|WebServiceActionContext|Label|TextConst|SecretText|Version|ModuleInfo|DotNet)\b
       scope: support.type.al
     - match: \b(?i:Codeunit|Record|Page|Report|Query|XmlPort|Enum|Interface)\b
