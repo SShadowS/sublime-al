@@ -245,7 +245,9 @@ contexts:
       push: var-section
 
   var-section:
-    - match: (?=\b(?i:begin|procedure|trigger|event)\b)
+    - match: (?=\b(?i:begin|procedure|trigger|event|local|internal|protected)\b)
+      pop: true
+    - match: (?=\[)
       pop: true
     - match: (?=\})
       pop: true

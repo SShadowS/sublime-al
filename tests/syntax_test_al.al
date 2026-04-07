@@ -1,16 +1,16 @@
 // SYNTAX TEST "Packages/AL/AL.sublime-syntax"
 
 namespace MyCompany.MyApp;
-// ^^^^^^^ keyword.import.al
+// ^^^^^^ keyword.import.al
 
 using System.Text;
-// ^^^ keyword.import.al
+// ^^ keyword.import.al
 
 codeunit 50000 "My Codeunit" implements IFace
 // ^^^^^ storage.type.al
 //       ^^^^^ constant.numeric.integer.al
-//             ^^^^^^^^^^^^^^ entity.name.type.al
-//                            ^^^^^^^^^^ keyword.import.al
+//             ^^^^^^^^^^^^^ entity.name.type.al
+//                           ^^^^^^^^^^ keyword.import.al
 {
     var
 //  ^^^ keyword.declaration.al
@@ -30,14 +30,14 @@ codeunit 50000 "My Codeunit" implements IFace
 //                               ^^^^^ variable.parameter.al
 //                                      ^^^^^^ support.type.al
 //                                             ^^^^^^^^^^ entity.name.type.al
-//                                                         ^^^^^^^ support.type.al
+//                                                          ^^^^^^^ support.type.al
     var
         x: Integer;
     begin
 //  ^^^^^ keyword.control.al
         if x > 0 then
 //      ^^ keyword.control.al
-//             ^ keyword.operator.comparison.al
+//           ^ keyword.operator.comparison.al
 //               ^^^^ keyword.control.al
             x := x + 1;
 //            ^^ keyword.operator.assignment.al
@@ -68,19 +68,19 @@ table 50000 "My Table"
 // Preprocessor
 #if not CLEAN25
 // <- punctuation.definition.directive.al
-// ^^ keyword.control.import.al
-//    ^^^ keyword.operator.al
-//        ^^^^^^^ variable.other.al
+//^ keyword.control.import.al
+//  ^^^ keyword.operator.al
+//      ^^^^^^^ variable.other.al
 #else
 // <- punctuation.definition.directive.al
-// ^^^ keyword.control.import.al
+// ^^ keyword.control.import.al
 #endif
 // <- punctuation.definition.directive.al
-// ^^^^ keyword.control.import.al
+// ^^^ keyword.control.import.al
 
 #pragma warning disable AL0432
 // <- punctuation.definition.directive.al
-// ^^^^^ keyword.control.import.al
+// ^^^^ keyword.control.import.al
 
 /* block comment */
 // ^^^^^^^^^^^^^ comment.block.al
