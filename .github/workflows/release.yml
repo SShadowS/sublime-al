@@ -1,0 +1,27 @@
+name: Build Sublime Package
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build .sublime-package
+        run: |
+          zip -r AL.sublime-package . \
+            -x ".git/*" \
+            -x ".github/*" \
+            -x ".gitignore" \
+            -x ".gitattributes" \
+            -x "CLAUDE.md" \
+            -x "scripts/*" \
+            -x "tests/*"
+
+      - name: Upload to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: AL.sublime-package
