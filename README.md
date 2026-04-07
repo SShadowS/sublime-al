@@ -1,16 +1,35 @@
 # AL for Sublime Text
 
-Syntax highlighting for the AL programming language used in Microsoft Dynamics 365 Business Central.
+Syntax highlighting, completions, and symbol indexing for the AL programming language used in Microsoft Dynamics 365 Business Central.
+
+[![Package Control](https://img.shields.io/packagecontrol/dt/AL)](https://packagecontrol.io/packages/AL)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+## Overview
+
+| Metric | Value |
+|--------|-------|
+| Syntax rules | 409 lines, 90 scopes |
+| Completions | 228 keyword/type completions |
+| File types | `.al`, `.dal` |
+| Sublime version | 4 (syntax v2) |
+| Tests | syntax_test_al.al |
 
 ## Features
 
-- Full syntax highlighting for AL files (`.al`, `.dal`)
-- Context-aware scoping for object declarations, procedures, var sections, and attributes
-- Preprocessor directive highlighting (`#if`, `#else`, `#endif`, `#pragma`)
-- Keyword completions for all AL keywords and built-in types
-- Symbol indexing — jump to procedures/triggers with `Ctrl+R`
-- Line and block comment toggling (`Ctrl+/`, `Ctrl+Shift+/`)
-- Proper indentation rules for begin/end blocks
+| Feature | Details |
+|---------|---------|
+| **Syntax highlighting** | Full context-aware scoping for all AL constructs |
+| **Object declarations** | `codeunit`, `table`, `page`, `report`, `enum`, etc. with ID and name |
+| **Procedures and triggers** | Parameter types, return types, access modifiers |
+| **Attributes** | `[Scope('OnPrem')]`, `[NonDebuggable]`, `[EventSubscriber]` |
+| **Preprocessor** | `#if`, `#else`, `#endif`, `#pragma` with condition highlighting |
+| **Strings** | Single-quoted `'text'` and verbatim `@'multiline'` |
+| **AL-specific literals** | Date (`0D`), time (`0T`), datetime (`0DT`), biginteger (`1000L`) |
+| **Keyword completions** | All AL keywords and built-in types |
+| **Symbol indexing** | Jump to procedures/triggers with `Ctrl+R` |
+| **Comment toggling** | Line (`Ctrl+/`) and block (`Ctrl+Shift+/`) |
+| **Indentation** | Automatic begin/end block indentation |
 
 ## Installation
 
@@ -22,26 +41,27 @@ Syntax highlighting for the AL programming language used in Microsoft Dynamics 3
 
 ### Manual
 
-1. Clone this repo into your Sublime Text Packages directory:
-   ```
-   cd "%APPDATA%/Sublime Text/Packages"
-   git clone https://github.com/SShadowS/sublime-al.git AL
-   ```
-2. Restart Sublime Text
+```bash
+cd "%APPDATA%/Sublime Text/Packages"
+git clone https://github.com/SShadowS/sublime-al.git AL
+```
 
 ## LSP Support
 
-For full language intelligence (go-to-definition, diagnostics, completions), install the [LSP-AL](https://github.com/SShadowS/LSP-AL) package which connects to the AL Language Server.
+For full language intelligence (go-to-definition, hover, diagnostics, call hierarchy, code lens), install [LSP-AL](https://github.com/SShadowS/sublime-lsp-al):
 
-## Highlighting Examples
+1. Install `LSP-AL` via Package Control
+2. The AL Language Server is downloaded automatically — no VS Code required
 
-The syntax highlights:
-- **Object declarations** — `codeunit`, `table`, `page`, etc. with ID and name
-- **Procedures and triggers** — with parameter types and return types
-- **Attributes** — `[Scope('OnPrem')]`, `[NonDebuggable]`
-- **Preprocessor** — `#if`, `#else`, `#endif` with condition highlighting
-- **Strings** — single-quoted `'text'` and verbatim `@'multiline'`
-- **AL-specific literals** — date (`0D`), time (`0T`), datetime (`0DT`), biginteger (`1000L`)
+## Key Files
+
+| File | Purpose |
+|------|---------|
+| `AL.sublime-syntax` | Syntax definition (context-aware, v2 format) |
+| `AL.sublime-completions` | 228 keyword and type completions |
+| `AL.tmPreferences` | Comment toggling and indentation rules |
+| `AL.sublime-settings` | Default editor settings for AL files |
+| `tests/syntax_test_al.al` | Syntax highlighting test suite |
 
 ## Regenerating Completions
 
@@ -51,6 +71,7 @@ If the AL language adds new keywords, regenerate completions from the [tree-sitt
 node scripts/generate-completions.js /path/to/tree-sitter-al/grammar.js
 ```
 
-## License
+---
 
-MIT
+**Author**: Torben Leth (sshadows@sshadows.dk)
+**License**: MIT (see [LICENSE](LICENSE))
